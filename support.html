@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support - Lumina</title>
+    <style>
+        :root {
+            --bg: #080a12;
+            --text: #f5f7ff;
+            --muted: rgba(245, 247, 255, 0.7);
+            --accent: #3df2ff;
+            --accent-2: #ff3dce;
+            --border: rgba(255, 255, 255, 0.16);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "Space Grotesk", "SF Pro Display", "Segoe UI", sans-serif;
+            background: radial-gradient(circle at 30% 20%, rgba(61, 242, 255, 0.18), transparent 50%),
+                        #080a12;
+            color: var(--text);
+            line-height: 1.7;
+            padding: 32px 20px 80px;
+            max-width: 860px;
+            margin: 0 auto;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 32px;
+        }
+
+        header a {
+            color: var(--accent);
+            text-decoration: none;
+            margin-left: 16px;
+        }
+
+        h1 {
+            font-size: 2.4rem;
+            margin-bottom: 12px;
+        }
+
+        p {
+            color: var(--muted);
+            margin-bottom: 16px;
+        }
+
+        ul {
+            padding-left: 20px;
+            color: var(--muted);
+            margin-bottom: 24px;
+        }
+
+        .contact-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: linear-gradient(120deg, var(--accent), var(--accent-2));
+            color: #05060b;
+            padding: 14px 24px;
+            border-radius: 999px;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .panel {
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 18px;
+            background: rgba(255, 255, 255, 0.04);
+            margin-top: 24px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <strong>Lumina</strong>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="privacy.html">Privacy</a>
+            <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" rel="noopener">EULA</a>
+        </nav>
+    </header>
+
+    <h1>Support</h1>
+    <p>Need help with Lumina? We can assist with gameplay questions, purchases, or account issues.</p>
+
+    <ul>
+        <li>Include your device model and iOS version.</li>
+        <li>Describe the game mode and steps to reproduce the issue.</li>
+        <li>Attach screenshots if possible.</li>
+    </ul>
+
+    <a class="contact-btn" href="mailto:support@yourdomain.com">Contact Support via Email</a>
+
+    <div class="panel">
+        <p>Support email: support@yourdomain.com (update with your official support address).</p>
+        <p>We typically respond within 2 business days.</p>
+    </div>
+</body>
+</html>

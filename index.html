@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lumina - Neon Arcade Collection</title>
+    <meta name="description" content="Lumina is a neon arcade collection of eight mini-games with quick sessions and global Game Center leaderboards.">
+    <meta name="keywords" content="arcade,mini games,neon,puzzle,action,leaderboard,score,casual">
+
+    <meta property="og:title" content="Lumina - Neon Arcade Collection">
+    <meta property="og:description" content="Eight neon mini-games built for quick sessions and high scores.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://zergcsda.github.io/lumina-docs/">
+
+    <style>
+        :root {
+            --bg: #05060b;
+            --bg-soft: rgba(7, 10, 18, 0.8);
+            --text: #f5f7ff;
+            --muted: rgba(245, 247, 255, 0.7);
+            --accent: #3df2ff;
+            --accent-2: #ff3dce;
+            --accent-3: #ffd84d;
+            --glass: rgba(255, 255, 255, 0.08);
+            --glass-border: rgba(255, 255, 255, 0.18);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "Space Grotesk", "SF Pro Display", "Segoe UI", sans-serif;
+            background: radial-gradient(circle at 20% 20%, rgba(61, 242, 255, 0.25), transparent 40%),
+                        radial-gradient(circle at 80% 0%, rgba(255, 61, 206, 0.18), transparent 35%),
+                        radial-gradient(circle at 50% 80%, rgba(255, 216, 77, 0.18), transparent 40%),
+                        #05060b;
+            color: var(--text);
+            line-height: 1.6;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .grid-overlay {
+            position: fixed;
+            inset: 0;
+            background-image: linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+            background-size: 80px 80px;
+            opacity: 0.3;
+            pointer-events: none;
+            z-index: -1;
+            animation: drift 18s ease-in-out infinite alternate;
+        }
+
+        @keyframes drift {
+            from { transform: translate(0, 0); }
+            to { transform: translate(-40px, -60px); }
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        header {
+            padding: 28px 0 12px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            font-size: 1.2rem;
+            letter-spacing: 0.24em;
+            text-transform: uppercase;
+        }
+
+        .logo-mark {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            background: linear-gradient(140deg, var(--accent), var(--accent-2));
+            box-shadow: 0 10px 30px rgba(61, 242, 255, 0.35);
+        }
+
+        nav a {
+            color: var(--muted);
+            text-decoration: none;
+            margin-left: 16px;
+            font-size: 0.95rem;
+        }
+
+        nav a:hover {
+            color: var(--text);
+        }
+
+        .hero {
+            padding: 90px 0 60px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            align-items: center;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.6rem, 4vw, 4.2rem);
+            line-height: 1.05;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--muted);
+            margin-bottom: 28px;
+        }
+
+        .cta-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+        }
+
+        .cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 20px;
+            border-radius: 999px;
+            border: 1px solid var(--glass-border);
+            background: var(--glass);
+            color: var(--text);
+            text-decoration: none;
+            font-size: 0.95rem;
+        }
+
+        .cta.primary {
+            background: linear-gradient(120deg, var(--accent), var(--accent-2));
+            border: none;
+            color: #05060b;
+            font-weight: 600;
+        }
+
+        .hero-card {
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            border-radius: 28px;
+            padding: 28px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+            backdrop-filter: blur(18px);
+        }
+
+        .hero-card h3 {
+            margin-bottom: 12px;
+            font-size: 1.2rem;
+        }
+
+        .hero-card ul {
+            list-style: none;
+            display: grid;
+            gap: 10px;
+        }
+
+        .hero-card li {
+            color: var(--muted);
+        }
+
+        section {
+            padding: 60px 0;
+        }
+
+        section h2 {
+            font-size: clamp(2rem, 3vw, 2.8rem);
+            text-align: center;
+            margin-bottom: 24px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--muted);
+            max-width: 700px;
+            margin: 0 auto 40px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: var(--bg-soft);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 20px;
+            min-height: 140px;
+            backdrop-filter: blur(10px);
+        }
+
+        .card h4 {
+            margin-bottom: 8px;
+        }
+
+        .card p {
+            color: var(--muted);
+            font-size: 0.95rem;
+        }
+
+        .list {
+            display: grid;
+            gap: 10px;
+            color: var(--muted);
+        }
+
+        .links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 18px;
+            justify-content: center;
+        }
+
+        .links a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        .links a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            padding: 40px 0 60px;
+            text-align: center;
+            color: var(--muted);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 720px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 14px;
+            }
+
+            nav a {
+                margin-left: 0;
+                margin-right: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="grid-overlay"></div>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <div class="logo-mark"></div>
+                Lumina
+            </div>
+            <nav>
+                <a href="privacy.html">Privacy</a>
+                <a href="support.html">Support</a>
+                <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" rel="noopener">EULA</a>
+            </nav>
+        </header>
+
+        <section class="hero">
+            <div>
+                <h1>Neon arcade collection. Eight games. One leaderboard hub.</h1>
+                <p>Lumina brings eight compact mini-games into a single neon arcade. Jump in for a quick session, chase your best score, and compare globally with Game Center leaderboards.</p>
+                <div class="cta-group">
+                    <a class="cta primary" href="support.html">Get Support</a>
+                    <a class="cta" href="privacy.html">Privacy Policy</a>
+                    <a class="cta" href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" rel="noopener">Apple EULA</a>
+                </div>
+            </div>
+            <div class="hero-card">
+                <h3>Quick Overview</h3>
+                <ul>
+                    <li>8 mini-games across puzzle, action, and reflex genres.</li>
+                    <li>Global Game Center leaderboards for every game.</li>
+                    <li>Local score records when not signed in.</li>
+                    <li>Progression upgrades and in-game currency.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>Arcade Lineup</h2>
+            <p class="section-subtitle">Each title is tuned for short, repeatable sessions that reward mastery.</p>
+            <div class="grid">
+                <div class="card">
+                    <h4>LUMINA</h4>
+                    <p>Logic Grid puzzle loop.</p>
+                </div>
+                <div class="card">
+                    <h4>NEON TANK</h4>
+                    <p>Classic combat survival.</p>
+                </div>
+                <div class="card">
+                    <h4>SURVIVOR</h4>
+                    <p>Rogue-lite action bursts.</p>
+                </div>
+                <div class="card">
+                    <h4>NEON RUSH</h4>
+                    <p>High speed tunnel dodging.</p>
+                </div>
+                <div class="card">
+                    <h4>MATCH-3</h4>
+                    <p>Gem puzzle chaining.</p>
+                </div>
+                <div class="card">
+                    <h4>BUBBLE POP</h4>
+                    <p>Arcade bubble shooter.</p>
+                </div>
+                <div class="card">
+                    <h4>SWEEPER</h4>
+                    <p>Logic bomb clearance.</p>
+                </div>
+                <div class="card">
+                    <h4>BLOCKS</h4>
+                    <p>Classic stacking flow.</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Subscriptions and In-App Purchases</h2>
+            <p class="section-subtitle">Purchases are optional and handled by Apple. You can play without buying anything.</p>
+            <div class="grid">
+                <div class="card">
+                    <h4>Subscriptions</h4>
+                    <p>Optional Lumina Pro monthly and yearly subscriptions provide premium benefits. Subscriptions auto-renew unless canceled at least 24 hours before the end of the current period.</p>
+                </div>
+                <div class="card">
+                    <h4>One-Time Purchases</h4>
+                    <p>Optional Lumina Pro Lifetime, Weekly Energy Pass, and Battle Pass are available as in-app purchases. Pricing may vary by region.</p>
+                </div>
+                <div class="card">
+                    <h4>Manage Purchases</h4>
+                    <p>Payment is charged to your Apple ID. Manage or cancel subscriptions in your App Store account settings after purchase.</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Compliance Links</h2>
+            <p class="section-subtitle">These links are included for App Store compliance and transparency.</p>
+            <div class="links">
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="support.html">Support</a>
+                <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" rel="noopener">Apple Standard EULA</a>
+            </div>
+        </section>
+
+        <footer>
+            <p>Contact: support@yourdomain.com (update with your official support address)</p>
+            <p>© 2026 Lumina. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>
