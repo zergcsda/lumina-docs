@@ -3,82 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Support - Lumina</title>
+    <title>Support · 支持 - Lumina</title>
+    <meta name="description" content="Get help with Lumina for iPhone and iPad.">
     <style>
         :root {
-            --bg: #080a12;
-            --text: #f5f7ff;
-            --muted: rgba(245, 247, 255, 0.7);
-            --accent: #3df2ff;
-            --accent-2: #ff3dce;
-            --border: rgba(255, 255, 255, 0.16);
+            --bg: #000000;
+            --panel: #161617;
+            --text: #f5f5f7;
+            --muted: #a1a1a6;
+            --accent: #2997ff;
+            --ok: #30d158;
+            --border: rgba(255, 255, 255, 0.12);
         }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
+        * { box-sizing: border-box; margin: 0; padding: 0; }
         body {
-            font-family: "Space Grotesk", "SF Pro Display", "Segoe UI", sans-serif;
-            background: radial-gradient(circle at 30% 20%, rgba(61, 242, 255, 0.18), transparent 50%),
-                        #080a12;
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang SC", "Segoe UI", sans-serif;
+            background: var(--bg);
             color: var(--text);
-            line-height: 1.7;
-            padding: 32px 20px 80px;
-            max-width: 860px;
+            line-height: 1.65;
+            padding: 32px 16px 80px;
+            max-width: 820px;
             margin: 0 auto;
         }
-
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 32px;
-        }
-
-        header a {
-            color: var(--accent);
-            text-decoration: none;
-            margin-left: 16px;
-        }
-
-        h1 {
-            font-size: 2.4rem;
-            margin-bottom: 12px;
-        }
-
-        p {
-            color: var(--muted);
-            margin-bottom: 16px;
-        }
-
-        ul {
-            padding-left: 20px;
-            color: var(--muted);
-            margin-bottom: 24px;
-        }
-
-        .contact-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            background: linear-gradient(120deg, var(--accent), var(--accent-2));
-            color: #05060b;
-            padding: 14px 24px;
-            border-radius: 999px;
-            font-weight: 600;
-            text-decoration: none;
-        }
-
-        .panel {
+        header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 40px; flex-wrap: wrap; gap: 12px; }
+        header strong { font-size: 1.1rem; letter-spacing: -0.01em; }
+        nav a { color: var(--accent); text-decoration: none; margin-left: 16px; font-size: 0.95rem; }
+        nav a:first-child { margin-left: 0; }
+        h1 { font-size: clamp(2rem, 6vw, 2.8rem); letter-spacing: -0.02em; line-height: 1.1; margin-bottom: 8px; }
+        h2 { margin: 32px 0 10px; font-size: 1.3rem; letter-spacing: -0.01em; }
+        p, li { color: var(--muted); margin: 8px 0; }
+        ul { padding-left: 20px; }
+        .date { color: var(--muted); font-size: 0.9rem; }
+        .label {
+            margin: 28px 0;
             border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 18px;
-            background: rgba(255, 255, 255, 0.04);
-            margin-top: 24px;
+            border-radius: 18px;
+            padding: 22px;
+            background: var(--panel);
         }
+        .label .badge { display: inline-flex; align-items: center; gap: 10px; font-weight: 600; color: var(--text); font-size: 1.15rem; }
+        .label .dot { width: 12px; height: 12px; border-radius: 50%; background: var(--ok); flex-shrink: 0; }
+        table { width: 100%; border-collapse: collapse; margin-top: 12px; font-size: 0.95rem; }
+        th, td { text-align: left; padding: 10px 8px; border-top: 1px solid var(--border); vertical-align: top; }
+        th { color: var(--text); font-weight: 600; width: 46%; }
+        td { color: var(--muted); }
+        .lang { border-top: 1px solid var(--border); margin-top: 56px; padding-top: 40px; }
+        a { color: var(--accent); }
     </style>
 </head>
 <body>
@@ -87,24 +57,49 @@
         <nav>
             <a href="index.html">Home</a>
             <a href="privacy.html">Privacy</a>
+            <a href="#zh">中文</a>
             <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" rel="noopener">EULA</a>
         </nav>
     </header>
 
-    <h1>Support</h1>
-    <p>Need help with Lumina? We can assist with gameplay questions, purchases, or account issues.</p>
+    <section id="en" lang="en">
+        <h1>Support</h1>
+        <p>Need help with Lumina? Email us and we will reply within two business days.</p>
+        <div class="label">
+            <div class="badge"><span class="dot"></span><a href="mailto:davidvabi106@gmail.com?subject=Lumina%20Support">davidvabi106@gmail.com</a></div>
+            <p>To help us find the problem faster, please include:</p>
+            <ul>
+                <li>Your device model and iOS or iPadOS version</li>
+                <li>The game (Lumina, Gem Resonance, Neon Sweeper or Neon Merge) and the steps that led to the problem</li>
+                <li>A screenshot or screen recording, if you can</li>
+            </ul>
+        </div>
+        <h2>Common questions</h2>
+        <p><strong>Do I need an internet connection?</strong> No. All four games work fully offline.</p>
+        <p><strong>Are there ads or in-app purchases?</strong> No. One App Store purchase includes everything.</p>
+        <p><strong>Where is my progress saved?</strong> On your device. Deleting the app also deletes your progress.</p>
+        <p><strong>How do I change the language or turn off sound?</strong> Tap the gear button on the home screen.</p>
+        <p><strong>Refunds</strong> are handled by Apple. Visit <a href="https://reportaproblem.apple.com" target="_blank" rel="noopener">reportaproblem.apple.com</a>.</p>
+    </section>
 
-    <ul>
-        <li>Include your device model and iOS version.</li>
-        <li>Describe the game mode and steps to reproduce the issue.</li>
-        <li>Attach screenshots if possible.</li>
-    </ul>
-
-    <a class="contact-btn" href="mailto:davidvabi106@gmail.com">Contact Support via Email</a>
-
-    <div class="panel">
-        <p>Support email: davidvabi106@gmail.com.</p>
-        <p>We typically respond within 2 business days.</p>
-    </div>
+    <section id="zh" class="lang" lang="zh-Hans">
+        <h1>支持</h1>
+        <p>使用 Lumina 遇到问题？发邮件给我们，我们会在两个工作日内回复。</p>
+        <div class="label">
+            <div class="badge"><span class="dot"></span><a href="mailto:davidvabi106@gmail.com?subject=Lumina%20%E6%94%AF%E6%8C%81">davidvabi106@gmail.com</a></div>
+            <p>为便于我们更快定位问题，请附上：</p>
+            <ul>
+                <li>设备型号与 iOS / iPadOS 版本</li>
+                <li>出现问题的游戏（Lumina、宝石共鸣、霓虹扫雷或霓虹合并）及操作步骤</li>
+                <li>如方便，请附截图或录屏</li>
+            </ul>
+        </div>
+        <h2>常见问题</h2>
+        <p><strong>需要联网吗？</strong>不需要，四款游戏均可完全离线游玩。</p>
+        <p><strong>有广告或 App 内购买吗？</strong>没有，App Store 一次购买即包含全部内容。</p>
+        <p><strong>进度保存在哪里？</strong>保存在你的设备上，删除 App 会同时删除进度。</p>
+        <p><strong>如何切换语言或关闭声音？</strong>点击首页右上角的齿轮按钮。</p>
+        <p><strong>退款</strong>由 Apple 处理，请访问 <a href="https://reportaproblem.apple.com" target="_blank" rel="noopener">reportaproblem.apple.com</a>。</p>
+    </section>
 </body>
 </html>
