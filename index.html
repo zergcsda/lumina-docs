@@ -1,163 +1,94 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lumina - Four Offline Puzzles</title>
-    <meta name="description" content="Four offline puzzle games for iPhone and iPad in one App Store purchase. No ads, no subscriptions, no in-app purchases.">
-    <meta property="og:title" content="Lumina - Four Offline Puzzles">
-    <meta property="og:description" content="Rotate. Match. Sweep. Merge. Four puzzle games, one purchase, fully offline.">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="media/poster_ipad.jpg">
-    <style>
-        :root {
-            --bg: #000;
-            --panel: #161617;
-            --text: #f5f5f7;
-            --muted: #86868b;
-            --accent: #2997ff;
-            --border: rgba(255, 255, 255, 0.12);
-        }
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "PingFang SC", "Segoe UI", sans-serif;
-            background: var(--bg);
-            color: var(--text);
-            line-height: 1.5;
-            -webkit-font-smoothing: antialiased;
-        }
-        a { color: var(--accent); text-decoration: none; }
-        .wrap { max-width: 1080px; margin: 0 auto; padding: 0 16px; }
-        header { display: flex; justify-content: space-between; align-items: center; padding: 18px 0; flex-wrap: wrap; gap: 12px; }
-        header strong { font-size: 1.05rem; }
-        nav a { margin-left: 18px; font-size: 0.92rem; color: var(--text); opacity: 0.8; }
-        nav a:first-child { margin-left: 0; }
-        .hero { text-align: center; padding: 56px 0 32px; }
-        .hero img.icon { width: 112px; height: 112px; border-radius: 25px; }
-        h1 { font-size: clamp(2.6rem, 9vw, 5rem); font-weight: 600; letter-spacing: -0.02em; line-height: 1.05; margin-top: 20px; }
-        .hero p { font-size: clamp(1.1rem, 3vw, 1.6rem); color: var(--muted); margin-top: 12px; }
-        .videos { display: flex; justify-content: center; align-items: flex-end; gap: 24px; padding: 24px 0 64px; flex-wrap: wrap; }
-        .videos figure { text-align: center; margin: 0; width: min(480px, 100%); }
-        .videos figure.phone { width: min(300px, 100%); }
-        .videos video { width: 100%; border-radius: 22px; border: 1px solid var(--border); background: #000; display: block; }
-        .videos figure.phone video { border-radius: 28px; }
-        .videos figcaption { color: var(--muted); margin-top: 10px; font-size: 0.95rem; }
-        h2 { font-size: clamp(2rem, 6vw, 3.2rem); font-weight: 600; letter-spacing: -0.015em; text-align: center; line-height: 1.1; }
-        .sub { text-align: center; color: var(--muted); font-size: 1.15rem; margin-top: 10px; }
-        .gallery { display: flex; gap: 16px; overflow-x: auto; padding: 16px 16px 24px; scroll-snap-type: x mandatory; }
-        .gallery.ipad img { height: min(520px, 62vh); }
-        .gallery img { height: min(560px, 70vh); border-radius: 18px; scroll-snap-align: center; flex: 0 0 auto; }
-        .points { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; padding: 24px 0 72px; }
-        .point { background: var(--panel); border-radius: 18px; padding: 22px; }
-        .point h3 { font-size: 1.2rem; font-weight: 600; }
-        .point p { color: var(--muted); margin-top: 6px; }
-        footer { border-top: 1px solid var(--border); padding: 28px 0 56px; color: var(--muted); font-size: 0.9rem; }
-        footer a { margin-right: 18px; }
-        body [lang="zh-Hans"] { display: none; }
-        body.zh [lang="en"] { display: none; }
-        body.zh [lang="zh-Hans"] { display: revert; }
-        body.zh .gallery[lang="zh-Hans"] { display: flex; }
-        body.zh .points[lang="zh-Hans"] { display: grid; }
-    </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lumina · Four games. One purchase.</title>
+  <meta name="description" content="Rotate circuits, match gems, sweep mines and merge tiles. Play all four puzzles offline on iPhone and iPad.">
+  <meta property="og:title" content="Lumina · Four games. One purchase.">
+  <meta property="og:description" content="Rotate circuits, match gems, sweep mines and merge tiles. Play all four puzzles offline on iPhone and iPad.">
+  <meta property="og:image" content="https://zergcsda.github.io/lumina-docs/media/icon.png">
+  <link rel="alternate" hreflang="en" href="https://zergcsda.github.io/lumina-docs/index.html">
+  <link rel="alternate" hreflang="zh-Hans" href="https://zergcsda.github.io/lumina-docs/index_zh.html">
+  <link rel="icon" href="media/icon.png">
+  <link rel="stylesheet" href="home.css">
 </head>
 <body>
+<nav class="top"><div class="wrap">
+  <a class="brand" href="index.html"><img src="media/icon.png" alt="">Lumina</a>
+  <div class="links">
+    <a href="support.html">Support</a>
+    <a href="privacy.html">Privacy</a>
+    <a class="lang" href="index_zh.html" lang="zh-Hans">中文</a>
+  </div>
+</div></nav>
+<main>
+<section class="hero"><div class="wrap">
+  <div>
+    <img class="icon" src="media/icon.png" alt="" width="88" height="88">
+    <h1>Four games.<br><span class="accent">One purchase.</span></h1>
+    <p class="lead">Rotate circuits, match gems, sweep mines and merge tiles. Play all four puzzles offline on iPhone and iPad.</p>
+    <div class="actions"><a class="btn primary" href="#how">How it works</a><a class="btn ghost" href="#gallery">See it in action</a></div>
+    <p class="avail">One App Store purchase includes all four games.</p>
+  </div>
+  <div class="shots">
+    <img src="media/iphone_en_1.jpg" alt="Four games" decoding="async">
+    <img src="media/iphone_en_2.jpg" alt="Lumina circuit puzzle" decoding="async">
+  </div>
+</div></section>
 <div class="wrap">
-    <header>
-        <strong>Lumina</strong>
-        <nav>
-            <a href="privacy.html">Privacy · 隐私</a>
-            <a href="support.html#feedback">Feedback · 建议</a>
-            <a href="support.html">Support · 支持</a>
-            <a href="#" id="toggle">中文</a>
-        </nav>
-    </header>
-
-    <section class="hero">
-        <img class="icon" src="media/icon.png" alt="Lumina app icon">
-        <h1 lang="en">Four games.<br>One purchase.</h1>
-        <h1 lang="zh-Hans">四款游戏。<br>一次买断。</h1>
-        <p lang="en">Rotate. Match. Sweep. Merge. Fully offline on iPhone and iPad.</p>
-        <p lang="zh-Hans">旋转、消除、扫雷、合并。iPhone 与 iPad 上完全离线畅玩。</p>
-    </section>
-
-    <section class="videos">
-        <figure>
-            <video src="media/promo_ipad.mp4" poster="media/poster_ipad.jpg" controls playsinline muted loop preload="metadata"></video>
-            <figcaption>iPad</figcaption>
-        </figure>
-        <figure class="phone">
-            <video src="media/promo_iphone.mp4" poster="media/poster_iphone.jpg" controls playsinline muted loop preload="metadata"></video>
-            <figcaption>iPhone</figcaption>
-        </figure>
-    </section>
-
-    <h2 lang="en">See every game.</h2>
-    <h2 lang="zh-Hans">四款游戏，一览无余。</h2>
+<section class="block" id="how">
+  <h2>How it works</h2>
+  <div class="steps">
+    <article class="step"><h3>Rotate</h3><p>Connect the circuit in Lumina.</p></article>
+    <article class="step"><h3>Match</h3><p>Line up gems in Gem Resonance.</p></article>
+    <article class="step"><h3>Sweep or merge</h3><p>Find safe squares in Neon Sweeper or combine tiles in Neon Merge.</p></article>
+  </div>
+</section>
+<section class="block">
+  <h2>Features</h2>
+  <div class="grid">
+    <article class="feat"><h3>Fully offline</h3><p>Play without an account or internet connection.</p></article>
+    <article class="feat"><h3>Local progress</h3><p>Your progress and settings stay on your device.</p></article>
+    <article class="feat"><h3>Four games included</h3><p>No ads, subscriptions or in-app purchases.</p></article>
+  </div>
+</section>
+<section class="block" id="gallery">
+  <h2>See it in action</h2>
+  <div class="gallery">
+    <figure><img src="media/iphone_en_1.jpg" alt="" loading="lazy" decoding="async"><figcaption>Four games</figcaption></figure>
+    <figure><img src="media/iphone_en_2.jpg" alt="" loading="lazy" decoding="async"><figcaption>Lumina circuit puzzle</figcaption></figure>
+    <figure><img src="media/iphone_en_3.jpg" alt="" loading="lazy" decoding="async"><figcaption>Gem Resonance</figcaption></figure>
+    <figure><img src="media/iphone_en_4.jpg" alt="" loading="lazy" decoding="async"><figcaption>Neon Sweeper</figcaption></figure>
+    <figure><img src="media/iphone_en_5.jpg" alt="" loading="lazy" decoding="async"><figcaption>Neon Merge</figcaption></figure>
+  </div>
+</section>
+<section class="block">
+  <h2>iPad</h2>
+  <div class="gallery">
+    <figure><img src="media/ipad_en_1.jpg" alt="" loading="lazy"><figcaption>Four games</figcaption></figure>
+    <figure><img src="media/ipad_en_2.jpg" alt="" loading="lazy"><figcaption>Circuit puzzle</figcaption></figure>
+    <figure><img src="media/ipad_en_3.jpg" alt="" loading="lazy"><figcaption>Gem Resonance</figcaption></figure>
+    <figure><img src="media/ipad_en_4.jpg" alt="" loading="lazy"><figcaption>Neon Sweeper</figcaption></figure>
+    <figure><img src="media/ipad_en_5.jpg" alt="" loading="lazy"><figcaption>Neon Merge</figcaption></figure>
+  </div>
+</section>
+<section class="block media" id="video">
+  <h2>Watch on iPhone and iPad</h2>
+  <div class="gallery">
+    <figure><video src="media/promo_iphone.mp4" poster="media/poster_iphone.jpg" controls playsinline preload="none"></video><figcaption>iPhone</figcaption></figure>
+    <figure><video src="media/promo_ipad.mp4" poster="media/poster_ipad.jpg" controls playsinline preload="none"></video><figcaption>iPad</figcaption></figure>
+  </div>
+</section>
 </div>
-<div class="gallery ipad" lang="en">
-    <img src="media/ipad_en_1.jpg" alt="Lumina home screen with four games" loading="lazy">
-    <img src="media/ipad_en_2.jpg" alt="Lumina circuit puzzle solved" loading="lazy">
-    <img src="media/ipad_en_3.jpg" alt="Gem Resonance match-3" loading="lazy">
-    <img src="media/ipad_en_4.jpg" alt="Neon Sweeper board" loading="lazy">
-    <img src="media/ipad_en_5.jpg" alt="Neon Merge board" loading="lazy">
-</div>
-<div class="gallery iphone" lang="en">
-    <img src="media/iphone_en_1.jpg" alt="Lumina home screen with four games" loading="lazy">
-    <img src="media/iphone_en_2.jpg" alt="Lumina circuit puzzle solved" loading="lazy">
-    <img src="media/iphone_en_3.jpg" alt="Gem Resonance match-3" loading="lazy">
-    <img src="media/iphone_en_4.jpg" alt="Neon Sweeper board" loading="lazy">
-    <img src="media/iphone_en_5.jpg" alt="Neon Merge board" loading="lazy">
-</div>
-<div class="gallery ipad" lang="zh-Hans">
-    <img src="media/ipad_zh-Hans_1.jpg" alt="Lumina 首页" loading="lazy">
-    <img src="media/ipad_zh-Hans_2.jpg" alt="Lumina 线路解谜" loading="lazy">
-    <img src="media/ipad_zh-Hans_3.jpg" alt="宝石共鸣" loading="lazy">
-    <img src="media/ipad_zh-Hans_4.jpg" alt="霓虹扫雷" loading="lazy">
-    <img src="media/ipad_zh-Hans_5.jpg" alt="霓虹合并" loading="lazy">
-</div>
-<div class="gallery iphone" lang="zh-Hans">
-    <img src="media/iphone_zh-Hans_1.jpg" alt="Lumina 首页" loading="lazy">
-    <img src="media/iphone_zh-Hans_2.jpg" alt="Lumina 线路解谜" loading="lazy">
-    <img src="media/iphone_zh-Hans_3.jpg" alt="宝石共鸣" loading="lazy">
-    <img src="media/iphone_zh-Hans_4.jpg" alt="霓虹扫雷" loading="lazy">
-    <img src="media/iphone_zh-Hans_5.jpg" alt="霓虹合并" loading="lazy">
-</div>
-<div class="wrap">
-    <div class="points" lang="en">
-        <div class="point"><h3>No ads. No subscriptions.</h3><p>One App Store purchase includes all four games.</p></div>
-        <div class="point"><h3>Fully offline.</h3><p>No account and no network connection required.</p></div>
-        <div class="point"><h3>Data not collected.</h3><p>Progress and settings stay on your device. <a href="privacy.html">Privacy policy</a></p></div>
-    </div>
-    <div class="points" lang="zh-Hans">
-        <div class="point"><h3>无广告，无订阅。</h3><p>App Store 一次购买，包含全部四款游戏。</p></div>
-        <div class="point"><h3>完全离线。</h3><p>无需账号，无需联网。</p></div>
-        <div class="point"><h3>不收集数据。</h3><p>进度与设置只保存在你的设备上。<a href="privacy.html#zh">隐私政策</a></p></div>
-    </div>
-    <footer>
-        <a href="privacy.html">Privacy Policy</a>
-        <a href="support.html">Support</a>
-        <a href="support.html#feedback">Suggestions · 建议</a>
-        <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" rel="noopener">Apple EULA</a>
-        <p style="margin-top:12px">Contact: support@keepsub.com · © 2026 Lumina</p>
-    </footer>
-</div>
-<script>
-    (function () {
-        var zh = /^zh/i.test(navigator.language || "");
-        try { var saved = localStorage.getItem("lang"); if (saved) zh = saved === "zh"; } catch (e) {}
-        var toggle = document.getElementById("toggle");
-        function apply() {
-            document.body.classList.toggle("zh", zh);
-            toggle.textContent = zh ? "English" : "中文";
-        }
-        toggle.addEventListener("click", function (e) {
-            e.preventDefault();
-            zh = !zh;
-            try { localStorage.setItem("lang", zh ? "zh" : "en"); } catch (err) {}
-            apply();
-        });
-        apply();
-    })();
-</script>
+</main>
+<footer><div class="wrap">
+  <a href="support.html">Support</a>
+  <a href="privacy.html">Privacy</a>
+  <a href="support.html#feedback">Suggestions</a>
+  <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Apple EULA</a>
+  <a href="mailto:support@keepsub.com">support@keepsub.com</a>
+  <span class="sp">© 2026 Lumina</span>
+</div></footer>
 </body>
 </html>
